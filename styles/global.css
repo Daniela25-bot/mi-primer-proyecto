@@ -77,13 +77,27 @@ p {
 }
 
 .email-input button {
-    padding: 10px 24px;
-    height: 3.7rem;
-    width: 7rem;
-    border-radius: 50px;
+    /* 1. Dimensiones (Usamos medidas consistentes) */
+    height: 100%;           /* Que mida lo mismo que el input padre */
+    width: 100px;            /* Un ancho fijo queda mejor para el círculo */
+    
+    /* 2. El truco del centrado perfecto */
     position: absolute;
-    top: 0;
-    right: -16px;
+    top: 50%;               /* Lo baja a la mitad del contenedor */
+    right: 0;               /* Lo pega al borde derecho */
+    transform: translateY(-50%); /* Lo sube exactamente la mitad de su propio cuerpo */
+    
+    /* 3. Estética */
+    border-radius: 50px;
     border: none;
     background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    cursor: pointer;
+    
+    /* 4. Alineación del icono interno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Opcional: Sombra para que resalte como en la original */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
